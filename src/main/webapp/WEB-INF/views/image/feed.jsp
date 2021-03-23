@@ -22,7 +22,10 @@
                     </div>
                     <div class="sl__item__contents">
                         <div class="sl__item__contents__icon">
-                            <button onclick="clickBtn()"><i class="far fa-heart"></i></button>
+                            <button onclick="clickBtn()"><i class="far fa-heart"></i></button>             
+                        </div>
+                        <div class="sl__item__contents__tag">
+                        	#운동 #공부 #음식
                         </div>
                         <div class="sl__item__contents__content">
                             <p>내용내용내용내용</p>
@@ -42,7 +45,6 @@
                             </svg>
                         </div>
                         <div>Jxxva._.SP</div>
-                 
                     </div>
                     <div class="sl__item__img">
                         <img src="/images/home3.jpg" alt="">
@@ -50,6 +52,9 @@
                     <div class="sl__item__contents">
                         <div class="sl__item__contents__icon">
                             <button onclick="clickBtn()"><i class="far fa-heart"></i></button>
+                        </div>
+                        <div class="sl__item__contents__tag">
+                        	#운동 #공부 #음식
                         </div>
                         <div class="sl__item__contents__content">
                             <p>내용내용내용내용</p>
