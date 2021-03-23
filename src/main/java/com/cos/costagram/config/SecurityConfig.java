@@ -1,4 +1,4 @@
-package com.cos.costagram.comfig;
+package com.cos.costagram.config;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
