@@ -23,7 +23,7 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @Data
 @Entity
-public class Fallow {
+public class Follow {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int id;

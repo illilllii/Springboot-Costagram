@@ -32,7 +32,7 @@ public class Image {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int id;
-	private String cation;
+	private String caption;
 	private String postImageUrl;
 	
 	@ManyToOne 
