@@ -51,7 +51,7 @@ public class User {
 	@Enumerated(EnumType.STRING)
 	private RoleType role; // USER, ADMIN
 	
-	@OneToMany(mappedBy = "user")
+	@OneToMany(mappedBy = "user") // 기본전략 lazy
 	private List<Image> images;
 	
 	@CreationTimestamp
