@@ -29,6 +29,7 @@ public class UserService {
 		userProfileRespDto.setFollowState(followState == 1);
 		userProfileRespDto.setFollowCount(followCount);
 		userProfileRespDto.setImageCount(userEntity.getImages().size());
+
 		userProfileRespDto.setUser(userEntity);
 		
 		
