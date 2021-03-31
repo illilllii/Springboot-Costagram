@@ -34,7 +34,12 @@ spring:
   security:
     user:
       name: test
-      password: 1234   
+      password: 1234
+    oauth2:      client:        registration:          facebook:
+            client-id: 2994928800780099
+            client-secret: 343ae092b59144e3904a7a8cb8eee662
+            scope:            - email
+            - public_profile
 
 file:
   path: D:\HeeJin\mylab\instawork\Springboot-Costagram\src\main\resources\upload\
