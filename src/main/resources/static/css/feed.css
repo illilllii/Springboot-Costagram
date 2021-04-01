@@ -111,6 +111,7 @@
   margin-right: 10px;
   border: 0;
   cursor: pointer;
+  outline: none;
 }
 
 /*게시물 내용*/
@@ -176,7 +177,7 @@
   .story-list
   .story-list__item
   .sl__item__contents
-.sl__item__contents__comment button{ border: none; outline: none; background: #fff; cursor: pointer;}
+.sl__item__contents__comment button{ border: none; outline: none; background: #fff; cursor: pointer; outline: none}
 
 /* 댓글 입력창*/
 .main .container .story-list .story-list__item .sl__item__input {
@@ -200,6 +201,7 @@
   font-weight: 500;
   color: #0095f6;
   font-size: 14px;
+  outline:none;
 }
 
 /* Event */

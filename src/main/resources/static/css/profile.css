@@ -68,10 +68,12 @@
   color: #262626;
   font-weight: bold;
   background: transparent;
+  outline: none;
 }
 .profile .profile-right .name-group .modi {
   border: none;
   background: none;
+  outline: none;
 }
 .profile .profile-right .name-group .modi i {
   font-size: 20px;
@@ -89,6 +91,7 @@
 .profile .profile-right .follow ul li a {
   font-size: 16px;
   color: #262626;
+  text-decoration: none;
 }
 .profile .profile-right .follow ul li a span {
   font-weight: bold;

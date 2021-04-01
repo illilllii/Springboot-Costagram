@@ -33,7 +33,19 @@ public class ImageService {
 		
 		// 1. principalId로 내가 팔로우하고 있는 사용자를 찾아야 됨. (한개이거나 컬렉션이거나)
 		// select toUserId from follow where fromUserId = 로긴아이디
+		List<Image> images = imageRepository.mFeed(principalId);
 		
+		// 좋아요 하트 색깔 로직 + 좋아요 카운트 로직
+		images.forEach((image)->{
+			int likeCount = image.getLikes().size();
+			image.setLikeCount(likeCount);
+			
+			image.getLikes().forEach((like)->{
+				if(like.getUser().getId() == principalId) {
+					image.setLikeState(true);
+				}
+			});
+		});
 		return imageRepository.mFeed(principalId);
 	}
 	
