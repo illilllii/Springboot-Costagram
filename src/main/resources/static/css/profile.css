@@ -415,11 +415,11 @@
   justify-content: center;
 }
 .modal-info .modal {
-  width: 400px;
-  background-color: #fff;
-  border-radius: 10px;
-  display: flex;
-  flex-direction: column;
+width: 400px;
+    background-color: #fff;
+    display: flex;
+    flex-direction: column;
+    top: 54px;	
 }
 .modal-info .modal button {
   border: 0;
