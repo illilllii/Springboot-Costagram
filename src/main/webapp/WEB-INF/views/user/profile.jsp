@@ -14,7 +14,7 @@
 		<div class="profile-left">
 			<div class="profile-img-wrap story-border"
 				onclick="popup('.modal-image')">
-				<img src="/images/profile.jpeg" alt="">
+				<img src="/upload/${dto.user.profileImageUrl}" alt=""  onerror="this.src='/images/person.jpg'"/>
 				<svg viewbox="0 0 110 110">
                         <circle cx="55" cy="55" r="53" />
                     </svg>
@@ -79,7 +79,7 @@
 
 				<c:forEach var="image" items="${dto.user.images}">
 					<div class="img-box">
-						<a href=""><img src="/upload/${image.postImageUrl}" alt=""></a>
+						<a href=""><img src="/upload/${image.postImageUrl}" alt="" ></a>
 						<div class="comment">
 							<a href="#a" class=""><i class="fas fa-heart"></i><span>${image.likeCount}</span></a>
 						</div>
