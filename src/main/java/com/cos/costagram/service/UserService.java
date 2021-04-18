@@ -1,9 +1,17 @@
 package com.cos.costagram.service;
 
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.Paths;
+import java.util.UUID;
+
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
+import org.springframework.web.multipart.MultipartFile;
 
+import com.cos.costagram.config.auth.PrincipalDetails;
 import com.cos.costagram.domain.follow.FollowRepository;
 import com.cos.costagram.domain.user.User;
 import com.cos.costagram.domain.user.UserRepository;
@@ -17,6 +25,27 @@ public class UserService {
 	private final UserRepository userRepository;
 	private final FollowRepository followRepository;
 	private final BCryptPasswordEncoder bCryptPasswordEncoder;
+	
+	@Value("${file.path}")
+	private String uploadFolder;
+	
+	@Transactional
+	public User 회원사진변경(MultipartFile profileImageFile, PrincipalDetails principalDetails) {
+		UUID uuid = UUID.randomUUID();
+		String imageFileName = uuid+"_"+profileImageFile.getOriginalFilename();
+		Path imageFilePath = Paths.get(uploadFolder+imageFileName);
+		try {
+			Files.write(imageFilePath, profileImageFile.getBytes());
+		} catch(Exception e) {
+			e.printStackTrace();
+		}
+		
+		User userEntity = userRepository.findById(principalDetails.getUser().getId()).get();
+		
+		userEntity.setProfileImageUrl(imageFileName);
+		
+		return userEntity;
+	} // 더티체킹
 	
 	@Transactional(readOnly = true)
 	public UserProfileRespDto 회원프로필(int userId, int principalId) {

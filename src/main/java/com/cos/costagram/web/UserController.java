@@ -9,6 +9,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.multipart.MultipartFile;
 
 import com.cos.costagram.config.auth.PrincipalDetails;
 import com.cos.costagram.domain.user.User;
@@ -27,6 +28,12 @@ public class UserController {
 	private final UserService userService;
 	private final FollowService followService;
 	
+	@PutMapping("/user/{id}/profileImageUrl")
+	public @ResponseBody CMRespDto<?> profileImageUrlUpdate(@PathVariable int id, MultipartFile profileImageFile, @AuthenticationPrincipal PrincipalDetails principalDetails) {
+		User userEntity = userService.회원사진변경(profileImageFile, principalDetails);
+		principalDetails.setUser(userEntity);
+		return new CMRespDto<>(1, null);
+	}
 	@GetMapping("/user/{pageUserId}/follow")
 	public @ResponseBody CMRespDto<?> followList(@AuthenticationPrincipal PrincipalDetails principalDetails, @PathVariable int pageUserId) {
 		List<FollowRespDto> followRespDto = followService.팔로우리스트(principalDetails.getUser().getId(), pageUserId);
